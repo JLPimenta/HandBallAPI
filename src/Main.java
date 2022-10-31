@@ -18,6 +18,11 @@ public class Main {
         Captain teamCaptain = new Captain(homeplayer5); // <-- Estabelecendo capitão do Time mandante
         
         Stadium defaultStadium = new Stadium("Estádio Municipal Nilton Santos", null); // <-- Estádio do time mandante
+
+        Address nsAdress = new Address("Q. 1602 Sul ", null, "77103-970", "Plano Diretor Sul");
+
+        defaultStadium.setAddress(nsAdress); // Editando endereço do estádio local
+
         
         Team teamId1 = new Team("Palmas FC", teamCaptain, defaultStadium, 0); // <-- Criando o time de casa
         
@@ -45,23 +50,38 @@ public class Main {
             }
             
         }
+
+        class TeamComparator implements Comparator<Team> {
+
+            @Override
+            public int compare(Team t1, Team t2) {
+                
+                String nameP1 = t1.getName();
+                String nameP2 = t2.getName();
+                
+                return nameP1.compareTo(nameP2);
+            }
+
+
+        }
         //===========================================================================//
         
         final List<Player> homePlayers = teamId1.getPlayers(); //recupera os nomes dos jogadores
         
         PlayerComparator nameOrg = new PlayerComparator();
+        TeamComparator teamOrg = new TeamComparator();
 
         homePlayers.sort(nameOrg); // <-- organiza o nome dos jogadores por ordem alfabética
         
-        System.out.println(
-            "|====================| \n"
-            + "Time: " + teamId1.getName() + "\n"
-            + "\n Pontuação: " + teamId1.getPoints()
-            + "\n Capitão: " + teamId1.getCaptain().getCaptain().getName() + "\n \n"
-            + "Escalação: "
-        );
+        // System.out.println(
+        //     "|====================| \n"
+        //     + "Time: " + teamId1.getName() + "\n"
+        //     + "\n Pontuação: " + teamId1.getPoints()
+        //     + "\n Capitão: " + teamId1.getCaptain().getCaptain().getName() + "\n \n"
+        //     + "Escalação: "
+        // );
 
-        homePlayers.forEach(homePlayer -> System.out.println( "Nome: " + homePlayer.getName() + ", Nº: " + homePlayer.getNumber() )); // <-- retorna a lista dos nomes
+        // homePlayers.forEach(homePlayer -> System.out.println( "Nome: " + homePlayer.getName() + ", Nº: " + homePlayer.getNumber() )); // <-- retorna a lista dos nomes
         
         //-------------------------------------------------------------------------------------------------------------------------------//
     
@@ -94,20 +114,32 @@ public class Main {
 
         outPlayers.sort(nameOrg); // <-- organiza o nome dos jogadores por ordem alfabética
 
-        System.out.println(
-            "|====================| \n"
-            + "Time: " + teamId2.getName() + "\n"
-            + "\n Pontuação: " + teamId2.getPoints()
-            + "\n Capitão: " + teamId2.getCaptain().getCaptain().getName() + "\n \n"
-            + "Escalação: "
-        );
+        // System.out.println(
+        //     "|====================| \n"
+        //     + "Time: " + teamId2.getName() + "\n"
+        //     + "\n Pontuação: " + teamId2.getPoints()
+        //     + "\n Capitão: " + teamId2.getCaptain().getCaptain().getName() + "\n \n"
+        //     + "Escalação: "
+        // );
 
-        outPlayers.forEach(outPlayer -> System.out.println( "Nome: " + outPlayer.getName() + ", Nº: " + outPlayer.getNumber() )); // <-- retorna a lista dos nomes
+        // outPlayers.forEach(outPlayer -> System.out.println( "Nome: " + outPlayer.getName() + ", Nº: " + outPlayer.getNumber() )); // <-- retorna a lista dos nomes
+
 
         
         //-------------------------------------------------------------------------------------------------------------------------------//
 
+        Championship firstChamp = new Championship("Taça Palmas");
         
-        Championship firstChamp = new Championship("Taça Palmas", null);
+        Match firstMatch = new Match("10/11/2022", teamId1, teamId2);
+
+        firstChamp.addMatch(firstMatch);
+        
+        // System.out.println(
+        //     firstChamp.getName() + " começou! \n"
+        //     + "O primeiro confronto será: " + firstChamp.getMatch(0).getHomeTeam().getName() + " x " + firstChamp.getMatch(0).getVisitorTeam().getName()
+        //     + " \n Acontecerá em: " + firstChamp.getMatch(0).getDate()
+        //     + " \n No " + firstChamp.getMatch(0).getStadium().getName()
+        // );
+
     }
 }

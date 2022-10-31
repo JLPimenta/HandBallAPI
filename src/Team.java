@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Team {
 	private String name;
-	private List<Player> players = new ArrayList<Player>();
+	private List<Player> players = new ArrayList<>();
 	private Captain captain;
 	private Stadium homeStadium;
 	private Integer points;
