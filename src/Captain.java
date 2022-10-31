@@ -1,7 +1,7 @@
 
 
 public class Captain {
-	Player captain;
+	private Player captain;
 
 	
 	public Player getCaptain() {

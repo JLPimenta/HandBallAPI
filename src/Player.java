@@ -1,21 +1,30 @@
 
-
 public class Player {
 	private String name;
 	private String birthDate;
 	private char gender;
 	private Double height;
+	private int number;
 	
+	public int getNumber() {
+		return number;
+	}
+
+	public void setNumber(int number) {
+		this.number = number;
+	}
+
 	public String getName() {
 		return name;
 	}
 	
-	public Player(String name, String birthDate, char gender, Double height) {
+	public Player(String name, String birthDate, char gender, Double height, int number) {
 		super();
 		this.name = name;
 		this.birthDate = birthDate;
 		this.gender = gender;
 		this.height = height;
+		this.number = number;
 	}
 
 	public void setName(String name) {
@@ -46,4 +55,3 @@ public class Player {
 		this.height = height;
 	}
 }
-
