@@ -1,3 +1,6 @@
+package com.handballCamp.model;
+
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,4 +35,6 @@ public class Championship {
     public void setMatch(List<Match> match) {
         this.match = match;
     }
+
+    
 }
