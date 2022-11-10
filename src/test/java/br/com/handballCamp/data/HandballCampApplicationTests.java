@@ -1,10 +1,10 @@
-package com.handballCamp.App;
+package br.com.handballCamp.data;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AppApplicationTests {
+class HandballCampApplicationTests {
 
 	@Test
 	void contextLoads() {
