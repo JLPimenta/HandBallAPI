@@ -1,13 +1,13 @@
-package br.com.handballCamp.data;
+package crp.handball.API;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HandballCampApplication {
+public class ApiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HandballCampApplication.class, args);
+		SpringApplication.run(ApiApplication.class, args);
 	}
 
 }

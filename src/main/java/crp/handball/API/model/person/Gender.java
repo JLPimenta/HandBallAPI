@@ -1,4 +1,4 @@
-package br.com.handballCamp.data.model;
+package crp.handball.API.model.person;
 
 public enum Gender {
     MALE,
